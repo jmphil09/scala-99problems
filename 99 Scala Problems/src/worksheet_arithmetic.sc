@@ -8,14 +8,14 @@ P31 (**) Determine whether a given integer number is prime.
 scala> 7.isPrime
 res0: Boolean = true
 */
-  assert(new S99Int(2).isPrime == true)
-  assert(new S99Int(10).isPrime == false)
-  assert(new S99Int(1).isPrime == false)
-  assert(new S99Int(0).isPrime == false)
-  assert(new S99Int(-7).isPrime == false)
-  assert(new S99Int(3).isPrime == true)
-  assert(new S99Int(1121392387).isPrime == false)
-  assert(new S99Int(4).isPrime == false)
+  assert(2.isPrime == true)
+  assert(10.isPrime == false)
+  assert(1.isPrime == false)
+  assert(0.isPrime == false)
+  assert(-7.isPrime == false)
+  assert(3.isPrime == true)
+  assert(1121392387.isPrime == false)
+  assert(4.isPrime == false)
   assert(new S99Int(5).isPrime == true)
   /*
 P32 (**) Determine the greatest common divisor of two positive integer numbers.
@@ -50,7 +50,7 @@ res0: Int = 4
 */
   assert(10.totient == 4)
   assert(190.totient == 72)
-  //assert(-4.totient == 2) Note: This case may not be defined.
+  //assert(-4.totient == 2) Note: This case may not be defined, but gives 2 as a result on wolframalpha.com
   assert(729.totient == 486)
   assert(0.totient == 0)
   assert(555.totient == 288)
@@ -72,9 +72,17 @@ Construct a list containing the prime factors and their multiplicity.
 scala> 315.primeFactorMultiplicity
 res0: List[(Int, Int)] = List((3,2), (5,1), (7,1))
 Alternately, use a Map for the result.
-
 scala> 315.primeFactorMultiplicity
 res0: Map[Int,Int] = Map(3 -> 2, 5 -> 1, 7 -> 1)
+*/
+  assert(315.primeFactorMultiplicity == List((3, 2), (5, 1), (7, 1)))
+  assert(2.primeFactorMultiplicity == List((2, 1)))
+  assert(4.primeFactorMultiplicity == List((2, 2)))
+  assert(8.primeFactorMultiplicity == List((2, 3)))
+  assert(6.primeFactorMultiplicity == List((2, 1), (3, 1)))
+  assert(729.primeFactorMultiplicity == List((3, 6)))
+  assert(561.primeFactorMultiplicity == List((3, 1), (11, 1), (17, 1)))
+  /*
 P37 (**) Calculate Euler's totient function phi(m) (improved).
 See problem P34 for the definition of Euler's totient function. If the list of the prime factors of a number m is known in the form of problem P36 then the function phi(m>) can be efficiently calculated as follows: Let [[p1, m1], [p2, m2], [p3, m3], ...] be the list of prime factors (and their multiplicities) of a given number m. Then phi(m) can be calculated with the following formula:
 phi(m) = (p1-1)*p1(m1-1) * (p2-1)*p2(m2-1) * (p3-1)*p3(m3-1) * ...

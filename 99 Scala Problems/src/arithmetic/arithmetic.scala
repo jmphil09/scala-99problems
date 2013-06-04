@@ -1,12 +1,8 @@
 package arithmetic {
 
-  
-  
   class S99Int(val start: Int) {
     import S99Int._
 
-    //Test line from laptop
-    
     //P31 (**) Determine whether a given integer number is prime.
     def isPrime: Boolean = {
       def helper(number: Int, counter: Int, limit: Int): Boolean = {
@@ -15,7 +11,7 @@ package arithmetic {
         else if (number % counter == 0) false
         else helper(number, counter + 1, limit)
       }
-      val lim = math.sqrt(start).toInt + 1 
+      val lim = math.sqrt(start).toInt + 1
       helper(start, 2, lim)
     }
 
@@ -47,6 +43,19 @@ package arithmetic {
       }
       buildPrimes(2)
     }
+
+    //P36 (**) Determine the prime factors of a given positive integer (2).
+    //Construct a list containing the prime factors and their multiplicity.
+    def primeFactorMultiplicity: List[(Int, Int)] = {
+      val primelist = start.primeFactors
+      def nestingFunction(list: List[Int], pair: (Int, Int), accum: List[(Int, Int)]): List[(Int, Int)] = {
+        if (list.isEmpty) accum
+        else if (list.tail.isEmpty) accum ++ List(pair)
+        else if (list.head == list.tail.head) nestingFunction(list.tail, (pair._1, pair._2 + 1), accum)
+        else nestingFunction(list.tail, (list.tail.head, 1), accum ++ List(pair))
+      }
+      nestingFunction(primelist, (primelist.head, 1), List())
+    }
   }
 
   object S99Int {
@@ -60,6 +69,5 @@ package arithmetic {
     }
 
   }
-  
-  //This is a test line of code from i7-PC.
+
 } 

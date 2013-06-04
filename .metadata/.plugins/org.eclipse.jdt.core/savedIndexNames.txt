@@ -1,42 +1,17 @@
-<<<<<<< HEAD
-INDEX VERSION 1.126+C:\Users\fligh_000\Desktop\S99\scala-99problems\.metadata\.plugins\org.eclipse.jdt.core
-1697886153.index
-=======
-INDEX VERSION 1.126+C:\Users\James\Documents\GitHub\scala-99problems\.metadata\.plugins\org.eclipse.jdt.core
-3133528496.index
+INDEX VERSION 1.126+C:\Users\fligh_000\Documents\GitHub\scala-99problems\.metadata\.plugins\org.eclipse.jdt.core
+4041092966.index
+3974580528.index
+3164769823.index
+1115467115.index
+3065916431.index
+163172794.index
 4108727661.index
 1995173708.index
-1115467115.index
-4041092966.index
-1498219845.index
-2660715743.index
-163172794.index
-4155206848.index
->>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
+1299022128.index
+1697886153.index
 30765161.index
-1684392352.index
-3164769823.index
+3133528496.index
 305854171.index
-<<<<<<< HEAD
 4155206848.index
 1498219845.index
 2660715743.index
-1900814979.index
-4272632911.index
-4041092966.index
-3974580528.index
-955947246.index
-3164769823.index
-1115467115.index
-3065916431.index
-163172794.index
-1995173708.index
-4108727661.index
-1299022128.index
-=======
-1697886153.index
-1299022128.index
-3065916431.index
-2978726230.index
-3974580528.index
->>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
