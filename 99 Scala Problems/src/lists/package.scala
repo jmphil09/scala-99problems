@@ -1,0 +1,246 @@
+package object lists {
+
+  /* These problems (as well as the solutions to these problems) can be found at:
+ * 						http://aperiodic.net/phil/scala/s-99/
+ * */
+
+  // Section 1: Lists (P01 - P28)
+
+  //P01 Find the last element of a list
+  def last[A](l: List[A]): A = {
+    if (l.isEmpty) throw new NoSuchElementException("Error: Empty List")
+    else if (l.tail.isEmpty) l.head
+    else last(l.tail)
+  }
+
+  //P02 find the last but one element of a list
+  def penultimate[A](l: List[A]): A = {
+    if (l.isEmpty) throw new NoSuchElementException("Error: Empty List")
+    else if (l.tail.isEmpty) throw new NoSuchElementException("Error: List contains only 1 element")
+    else if (l.tail.tail.isEmpty) l.head
+    else penultimate(l.tail)
+  }
+
+  //P03 Find the Kth element of a list
+  def kth[A](i: Int, l: List[A]): A = {
+    if (i > l.length) throw new NoSuchElementException("Error: Index out of bounds")
+    else if (l.isEmpty) throw new NoSuchElementException("Error: Empty List")
+    else if (i == 0) l.head
+    else kth(i - 1, l.tail)
+  }
+
+  //P04 Find the number of elements of a list
+  def length[A](l: List[A]): Int = {
+    if (l.isEmpty) 0
+    else 1 + length(l.tail)
+  }
+
+  //P05 Reverse a list
+  def reverse[A](l: List[A]): List[A] = {
+
+    def revhelp[A](k: Int, list: List[A]): List[A] = {
+      if (k == 0) List(list.head)
+      else List(kth(k, list)) ++ revhelp(k - 1, list)
+    }
+
+    if (l.isEmpty) throw new NoSuchElementException("Error: Empty List")
+    else revhelp(length(l) - 1, l)
+
+  }
+
+  //P06 Find out whether a list is a palindrome
+  def isPalindrome[A](list: List[A]): Boolean = (reverse(list) == list)
+
+  //P07 (**) Flatten a nested list structure.
+  def flatten[A](list: List[A]): List[A] = list match {
+    case Nil => Nil
+    case head :: tail => {
+      head match {
+        case l: List[A] => flatten(l)
+        case i => List(i)
+      }
+    } ++ flatten(tail)
+  }
+
+  //P08 (**) Eliminate consecutive duplicates of list elements.
+  def compress[A](list: List[A]): List[A] = {
+    if (list.isEmpty) Nil
+    else if (list.tail.isEmpty) List(list.head)
+    else if (list.head == list.tail.head) compress(list.tail)
+    else List(list.head) ++ compress(list.tail)
+  }
+
+  //P09 (**) Pack consecutive duplicates of list elements into sublists. If a list contains repeated elements they should be placed in separate sublists.
+  def pack[A](list: List[A]): List[List[A]] = {
+    def packhelp[A](elem: A, l: List[A], nl: List[A]): List[List[A]] = {
+      if (l.isEmpty) Nil
+      else if (l.tail.isEmpty) List(nl ++ List(elem))
+      else if (l.head == elem) packhelp(elem, l.tail, nl ++ List(elem))
+      else List(nl) ++ packhelp(l.head, l.tail, List(l.head))
+    }
+
+    if (list.isEmpty) List(List())
+    else if (list.tail.isEmpty) List(List(list.head))
+    else if (list.head == list.tail.head) packhelp(list.head, list.tail, List(list.head)) //++ pack(list.tail)
+    else List(List(list.head)) ++ pack(list.tail)
+  }
+
+  //P10 (*) Run-length encoding of a list.
+  def encode[A](l: List[A]): List[(Int, Any)] = {
+    def enchelp(list: List[List[A]]): List[(Int, Any)] = {
+      if (list.isEmpty) Nil
+      else List((length(list.head), list.head.head)) ++ enchelp(list.tail)
+    }
+    if (l.isEmpty) Nil
+    else enchelp(pack(l))
+  }
+
+  //P11 (*) Modified run-length encoding.
+  def encodeModified[A](l: List[A]): List[Any] = {
+    def encModhelp(list: List[List[A]]): List[Any] = {
+      if (list.isEmpty) Nil
+      else if (length(list.head) == 1) List(list.head.head) ++ encModhelp(list.tail)
+      else List((length(list.head), list.head.head)) ++ encModhelp(list.tail)
+    }
+    if (l.isEmpty) Nil
+    else encModhelp(pack(l))
+  }
+
+  //P12 (**) Decode a run-length encoded list.
+  def decode[A](list: List[(Int, A)]): List[A] = {
+    def helpdec[A](counter: Int, item: A): List[A] = {
+      if (counter == 1) List(item)
+      else List(item) ++ helpdec(counter - 1, item)
+    }
+    if (list.isEmpty) Nil
+    else helpdec(list.head._1, list.head._2) ++ decode(list.tail)
+  }
+
+  //P13 (**) Run-length encoding of a list (direct solution).
+  def encodeDirect[A](l: List[A]): List[(Int, Any)] = {
+    def helpED[A](value: A, list: List[Any], counter: Int): List[(Int, Any)] = {
+      if (list.isEmpty) List((counter, value))
+      else if (list.head == value) helpED(value, list.tail, counter + 1)
+      else List((counter, value)) ++ helpED(list.head, list.tail, 1)
+    }
+    if (l.isEmpty) Nil
+    else helpED(l.head, l.tail, 1)
+  }
+
+  //P14 (*) Duplicate the elements of a list.
+  def duplicate[A](list: List[A]): List[Any] = {
+    if (list.isEmpty) Nil
+    else if (list.tail.isEmpty) List(list.head, list.head)
+    else List(list.head) ++ List(list.head) ++ duplicate(list.tail)
+  }
+
+  //P15 (**) Duplicate the elements of a list a given number of times.
+  def duplicateN[A](int: Int, list: List[A]): List[Any] = {
+    def dupe[A](counter: Int, l: List[A]): List[Any] = {
+      if (counter == 0) Nil
+      else List(list.head) ++ dupe(counter - 1, list)
+    }
+    if (int < 1) throw new NoSuchElementException("Error: Index out of bounds")
+    if (list.isEmpty) Nil
+    else if (list.tail.isEmpty) dupe(int, list)
+    else dupe(int, list) ++ duplicateN(int, list.tail)
+  }
+
+  //P16 (**) Drop every Nth element from a list.
+  def drop[A](number: Int, l: List[A]): List[A] = {
+    def hdrop[A](num: Int, counter: Int, list: List[A], newlist: List[A]): List[A] = {
+      if (list.isEmpty) newlist
+      else if (counter % num == 0) hdrop(num, counter + 1, list.tail, newlist)
+      else hdrop(num, counter + 1, list.tail, newlist ++ List(list.head))
+    }
+    if (number < 1) throw new NoSuchElementException("Error: Index out of bounds")
+    else hdrop(number, 1, l, List())
+  }
+
+  //P17 (*) Split a list into two parts.
+  def split[A](number: Int, list: List[A]): (List[A], List[A]) = {
+    def hsplit[A](counter: Int, firstlist: List[A], lastlist: List[A]): (List[A], List[A]) = {
+      if (counter == 0) (firstlist, lastlist)
+      else if (lastlist.isEmpty) throw new NoSuchElementException("Error: Index out of bounds")
+      else hsplit(counter - 1, firstlist ++ List(lastlist.head), lastlist.tail)
+    }
+    if (number < 0) throw new NoSuchElementException("Error: Index out of bounds")
+    else if (list.isEmpty) (Nil, Nil)
+    else hsplit(number, List(), list)
+  }
+
+  //P18 (**) Extract a slice from a list.
+  def slice[A](n: Int, m: Int, list: List[A]): List[A] = {
+    split(m - n, split(n, list)._2)._1
+  }
+
+  //P19 (**) Rotate a list N places to the left.
+  def rotate[A](number: Int, list: List[A]): List[A] = {
+    if (number >= 0) split(number, list)._2 ++ split(number, list)._1
+    else rotate(length(list) + number, list)
+  }
+
+  //P20 (*) Remove the Kth element from a list.
+  def removeAt[A](number: Int, list: List[A]): (List[A], A) = {
+    if (number < 0 || number > length(list)) throw new NoSuchElementException("Error: Index out of bounds")
+    else if (list.isEmpty) throw new NoSuchElementException("Error: Empty List")
+    else (split(number, list)._1 ++ split(number, list)._2.tail, (split(number, list)._2.head))
+  }
+
+  //P21 (*) Insert an element at a given position into a list.
+  def insertAt[A](elem: A, number: Int, list: List[A]): List[A] = {
+    if (list.isEmpty && number > 0) throw new NoSuchElementException("Error: Index out of bounds")
+    else split(number, list)._1 ++ List(elem) ++ split(number, list)._2
+  }
+
+  //P22 (*) Create a list containing all integers within a given range.
+  def range(m: Int, n: Int): List[Int] = {
+    def hrange(lower: Int, upper: Int, list: List[Int]): List[Int] = {
+      if (lower == upper) list
+      else hrange(lower + 1, upper, list ++ List(lower + 1))
+    }
+    if (m < n) hrange(m, n, List(m))
+    else reverse(hrange(n, m, List(n)))
+  }
+
+  //P23 (**) Extract a given number of randomly selected elements from a list.
+  def randomSelect[A](num: Int, list: List[A]): List[A] = {
+    if (num < 0 || num > length(list)) throw new NoSuchElementException("Error: Index out of bounds")
+    else if (num == 0) Nil
+    else {
+      val rand = scala.util.Random.nextInt(length(list))
+      val newlist = removeAt(rand, list)._1
+      val newelem = removeAt(rand, list)._2
+
+      List(newelem) ++ randomSelect(num - 1, newlist)
+    }
+  }
+
+  //P24 (*) Lotto: Draw N different random numbers from the set 1..M.
+  def lotto(num: Int, upper: Int): List[Int] = {
+    randomSelect(num, range(1, upper))
+  }
+
+  //P25 (*) Generate a random permutation of the elements of a list.
+  def randomPermute[A](list: List[A]): List[A] = {
+    randomSelect(length(list), list)
+  }
+
+  //P26 (**) Generate the combinations of K distinct objects chosen from the N elements of a list.
+  def combinations[A](num: Int, list: List[A]): List[List[A]] = {
+    def generator[A](firstlist: List[A], lastlist: List[A]): List[List[A]] = {
+      if (lastlist.isEmpty) Nil
+      else List(firstlist ++ List(lastlist.head)) ++ generator(firstlist, lastlist.tail)
+    }
+
+    def callgen[A](n: Int, l: List[A]): List[List[A]] = {
+      if (length(l) < n) Nil
+      else if (l == n) List(l)
+      else generator(split(n - 1, l)._1, split(n - 1, l)._2) ++ callgen(n, l.tail)
+    }
+
+    if (num == 1) generator(split(num - 1, list)._1, split(num - 1, list)._2)
+    else callgen(num, list)
+  }
+
+}
