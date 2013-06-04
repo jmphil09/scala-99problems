@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
 <window height="760" maximized="true" width="1024" x="78" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -21,8 +21,8 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -37,14 +37,17 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.scalaide.worksheet.editors.ScriptEditor" name="worksheet_arithmetic.sc" partName="worksheet_arithmetic.sc" path="C:/Users/fligh_000/Dropbox/Programming Stuff/99 Scala Problems/99 Scala Problems/src/worksheet_arithmetic.sc" title="worksheet_arithmetic.sc" tooltip="99 Scala Problems/src/worksheet_arithmetic.sc" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/worksheet_arithmetic.sc"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2134" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="arithmetic.scala" partName="arithmetic.scala" path="C:/Users/fligh_000/Desktop/S99/scala-99problems/99 Scala Problems/src/arithmetic/arithmetic.scala" title="arithmetic.scala" tooltip="99 Scala Problems/src/arithmetic/arithmetic.scala" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1944" selectionTopPixel="386"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -91,7 +94,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.scalaide.worksheet.editors.ScriptEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.views.ProblemView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="scala.tools.eclipse.PerspectiveFactory" id="org.scala-ide.sdt.core.perspective" label="Scala"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -279,10 +282,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/lists/package.scala"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/99 Scala Problems/src/worksheet_lists.sc"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/99 Scala Problems/src/worksheet_arithmetic.sc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
 </editors>
-<item historyLabel="worksheet_arithmetic.sc" index="0">
-<position info="not_deleted" x="1550" y="0"/>
-</item>
 <item historyLabel="arithmetic.scala" index="1">
 <position info="not_deleted" x="1606" y="0"/>
 </item>
@@ -427,8 +428,11 @@
 <item historyLabel="arithmetic.scala" index="1">
 <position info="not_deleted" x="455" y="0"/>
 </item>
-<item active="true" historyLabel="worksheet_arithmetic.sc" index="6">
-<position/>
+<item historyLabel="worksheet_arithmetic.sc" index="6">
+<position info="not_deleted" x="2134" y="0"/>
+</item>
+<item active="true" historyLabel="arithmetic.scala" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -447,14 +451,14 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="arithmetic.scala" tooltip="99 Scala Problems/src/arithmetic/arithmetic.scala">
+<persistable path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="worksheet_lists.sc" tooltip="99 Scala Problems/src/worksheet_lists.sc">
 <persistable path="/99 Scala Problems/src/worksheet_lists.sc"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="package.scala" tooltip="99 Scala Problems/src/lists/package.scala">
 <persistable path="/99 Scala Problems/src/lists/package.scala"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="arithmetic.scala" tooltip="99 Scala Problems/src/arithmetic/arithmetic.scala">
-<persistable path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="worksheet_arithmetic.sc" tooltip="99 Scala Problems/src/worksheet_arithmetic.sc">
 <persistable path="/99 Scala Problems/src/worksheet_arithmetic.sc"/>
