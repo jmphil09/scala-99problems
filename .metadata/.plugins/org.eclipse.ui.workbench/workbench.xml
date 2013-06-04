@@ -14,7 +14,7 @@
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
-<coolItem id="org.scala-ide.sdt.core.toolbar" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.scala-ide.sdt.core.toolbar" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="scala.texteditor.actionset" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
@@ -37,16 +37,26 @@
 </folder>
 </info>
 </editorArea>
+<<<<<<< HEAD
 <editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="arithmetic.scala" partName="arithmetic.scala" path="C:/Users/fligh_000/Desktop/S99/scala-99problems/99 Scala Problems/src/arithmetic/arithmetic.scala" title="arithmetic.scala" tooltip="99 Scala Problems/src/arithmetic/arithmetic.scala" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1944" selectionTopPixel="386"/>
+=======
+<editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="arithmetic.scala" partName="arithmetic.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/arithmetic/arithmetic.scala" title="arithmetic.scala" tooltip="99 Scala Problems/src/arithmetic/arithmetic.scala" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="116" selectionTopPixel="0"/>
+>>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
+<<<<<<< HEAD
 <category IMemento.internal.id="Warnings"/>
+=======
+<category IMemento.internal.id="Warnings (1 item)"/>
+>>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -94,7 +104,11 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
+<<<<<<< HEAD
 <perspectives activePart="org.eclipse.ui.views.ProblemView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+=======
+<perspectives activePart="scala.tools.eclipse.ScalaSourceFileEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+>>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="scala.tools.eclipse.PerspectiveFactory" id="org.scala-ide.sdt.core.perspective" label="Scala"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -284,9 +298,12 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/99 Scala Problems/src/worksheet_arithmetic.sc"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/arithmetic/arithmetic.scala"/>
 </editors>
+<<<<<<< HEAD
 <item historyLabel="arithmetic.scala" index="1">
 <position info="not_deleted" x="1606" y="0"/>
 </item>
+=======
+>>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
 <item historyLabel="arithmetic.scala" index="1">
 <position info="not_deleted" x="1126" y="0"/>
 </item>
@@ -429,7 +446,14 @@
 <position info="not_deleted" x="455" y="0"/>
 </item>
 <item historyLabel="worksheet_arithmetic.sc" index="6">
+<<<<<<< HEAD
 <position info="not_deleted" x="2134" y="0"/>
+=======
+<position info="not_deleted" x="393" y="0"/>
+</item>
+<item historyLabel="arithmetic.scala" index="7">
+<position info="not_deleted" x="2001" y="0"/>
+>>>>>>> 5bd74c5f502675c1fc83a2acfb4f3d360a7394ef
 </item>
 <item active="true" historyLabel="arithmetic.scala" index="7">
 <position info="not_deleted" x="0" y="0"/>

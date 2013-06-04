@@ -1,12 +1,8 @@
 package arithmetic {
 
-  
-  
   class S99Int(val start: Int) {
     import S99Int._
 
-    //Test line from laptop
-    
     //P31 (**) Determine whether a given integer number is prime.
     def isPrime: Boolean = {
       def helper(number: Int, counter: Int, limit: Int): Boolean = {
@@ -60,6 +56,4 @@ package arithmetic {
     }
 
   }
-  
-  //This is a test line of code from i7-PC.
 } 
