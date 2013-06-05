@@ -61,19 +61,27 @@ package arithmetic {
     //Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers. E.g. 28 = 5 + 23. It is one of the most famous facts in number theory that has not been proved to be correct in the general case. It has been numerically confirmed up to very large numbers (much larger than Scala's Int can represent). Write a function to find the two prime numbers that sum up to a given even integer.
     def goldbach: (Int, Int) = {
       lazy val primelist = listPrimesinRange(2 to start)
-      def sumFirstList(a: Int, list: List[Int]): (Int, Int) = {
-        if (list.isEmpty) null
-        else if (a + list.head == start) (a, list.head)
-        else sumFirstList(a, list.tail)
-      }
-      def sumList(list: List[Int]): (Int, Int) = {
-        if (sumFirstList(list.head, list) != null) sumFirstList(list.head, list)
-        else sumList(list.tail)
-      }
       if ((start % 2) == 1 || (start == 2)) throw new Exception("Only even numbers greater than 2 are permitted.")
       else sumList(primelist)
     }
 
+    //These two functions have been taken out of the goldback function in order to be used down below.
+    def sumFirstList(a: Int, list: List[Int]): (Int, Int) = {
+      if (list.isEmpty) null
+      else if (a + list.head == start) (a, list.head)
+      else sumFirstList(a, list.tail)
+    }
+    def sumList(list: List[Int]): (Int, Int) = {
+      if (sumFirstList(list.head, list) != null) sumFirstList(list.head, list)
+      else if (list.tail.isEmpty) (1, 1)
+      else sumList(list.tail)
+    }
+
+    def goldbachLim(lim: Int): (Int, Int) = {
+      lazy val primelist = listPrimesinRange(lim to start)
+      if ((start % 2) == 1 || (start == 2) || (primelist.isEmpty)) (1, 1)
+      else sumList(primelist)
+    }
   }
 
   object S99Int {
@@ -115,6 +123,38 @@ package arithmetic {
       if (r.isEmpty) Nil
       else if (r.head.isPrime) List(r.head) ++ listPrimesinRange(r.tail)
       else listPrimesinRange(r.tail)
+    }
+
+    //P41 (**) A list of Goldbach compositions.
+    //Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.
+    def printGoldbachList(r: Range): Unit = {
+      if (r.isEmpty) Nil
+      else if (r.head % 2 == 1) printGoldbachList(r.tail)
+      else {
+        val num = r.head
+        val pair = num.goldbach
+        println(num + " = " + pair._1 + " + " + pair._2)
+        printGoldbachList(r.tail)
+      }
+    }
+
+    def printGoldbachListLimited(r: Range, n: Int): Unit = {
+      if (r.isEmpty) Nil
+      else if (r.head % 2 == 1) printGoldbachListLimited(r.tail, n)
+      else if (r.head.goldbachLim(n) != (1, 1)) {
+        val num = r.head
+        val pair = num.goldbachLim(n)
+        println(num + " = " + pair._1 + " + " + pair._2)
+        printGoldbachListLimited(r.tail, n)
+      } else printGoldbachListLimited(r.tail, n)
+    }
+
+    //This is the solution from the website, which I believe is incorrect.
+    def printGoldbachListLimited1(r: Range, limit: Int) {
+      (r filter { n => n > 2 && n % 2 == 0 } map { n => (n, n.goldbach) }
+        filter { _._2._1 >= limit } foreach {
+          _ match { case (n, (p1, p2)) => println(n + " = " + p1 + " + " + p2) }
+        })
     }
   }
 

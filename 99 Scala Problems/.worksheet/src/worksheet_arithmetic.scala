@@ -127,7 +127,7 @@ res0: (Int, Int) = (5,23)
   assert(6.goldbach == (3, 3));$skip(33); 
   assert(34.goldbach == (3, 31));$skip(36); 
   assert(222.goldbach == (11, 211));$skip(35); 
-  assert(110.goldbach == (3, 107))}
+  assert(110.goldbach == (3, 107));$skip(480); 
   //2.goldbach    java.lang.Exception: Only even numbers greater than 2 are permitted.
   //23.goldbach     java.lang.Exception: Only even numbers greater than 2 are permitted.
   /*
@@ -140,6 +140,10 @@ scala> printGoldbachList(9 to 20)
 16 = 3 + 13
 18 = 5 + 13
 20 = 3 + 17
+*/
+  printGoldbachList(9 to 20);$skip(510); val res$0 = 
+  /*
+
 In most cases, if an even number is written as the sum of two prime numbers, one of them is very small. Very rarely, the primes are both bigger than, say, 50. Try to find out how many such cases there are in the range 2..3000.
 
 Example (minimum value of 50 for the primes):
@@ -151,5 +155,18 @@ scala> printGoldbachListLimited(1 to 2000, 50)
 1928 = 61 + 1867
 The file containing the full class for this section is arithmetic.scala.
 */
+
+  (1.toInt, 2.toInt) == (Int, Int);System.out.println("""res0: Boolean = """ + $show(res$0));$skip(22); val res$1 = 
+  992.goldbachLim(50);System.out.println("""res1: (Int, Int) = """ + $show(res$1));$skip(20); val res$2 = 
+  1.goldbachLim(50);System.out.println("""res2: (Int, Int) = """ + $show(res$2));$skip(21); val res$3 = 
+  60.goldbachLim(50);System.out.println("""res3: (Int, Int) = """ + $show(res$3));$skip(43); 
+  printGoldbachListLimited(990 to 994, 50);$skip(13); val res$4 = 
+  53.isPrime;System.out.println("""res4: Boolean = """ + $show(res$4));$skip(14); val res$5 = 
+  937.isPrime;System.out.println("""res5: Boolean = """ + $show(res$5));$skip(43); 
+  printGoldbachListLimited1(1 to 2000, 50);$skip(11); val res$6 = 
+  53 + 937;System.out.println("""res6: Int(990) = """ + $show(res$6));$skip(21); val res$7 = 
+  54.goldbachLim(50);System.out.println("""res7: (Int, Int) = """ + $show(res$7));$skip(21); val res$8 = 
+  52.goldbachLim(50);System.out.println("""res8: (Int, Int) = """ + $show(res$8));$skip(42); 
+  printGoldbachListLimited(1 to 2000, 50)}
 
 }
