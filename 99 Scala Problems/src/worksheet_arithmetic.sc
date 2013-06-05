@@ -86,20 +86,51 @@ res0: Map[Int,Int] = Map(3 -> 2, 5 -> 1, 7 -> 1)
 P37 (**) Calculate Euler's totient function phi(m) (improved).
 See problem P34 for the definition of Euler's totient function. If the list of the prime factors of a number m is known in the form of problem P36 then the function phi(m>) can be efficiently calculated as follows: Let [[p1, m1], [p2, m2], [p3, m3], ...] be the list of prime factors (and their multiplicities) of a given number m. Then phi(m) can be calculated with the following formula:
 phi(m) = (p1-1)*p1(m1-1) * (p2-1)*p2(m2-1) * (p3-1)*p3(m3-1) * ...
-
 Note that ab stands for the bth power of a.
-
+*/
+  assert(phi(10) == 4)
+  assert(phi(190) == 72)
+  //assert(phi(-4) == 2) //Note: This case may not be defined, but gives 2 as a result on wolframalpha.com
+  assert(phi(729) == 486)
+  assert(phi(0) == 0)
+  assert(phi(555) == 288)
+  /*
 P38 (*) Compare the two methods of calculating Euler's totient function.
 Use the solutions of problems P34 and P37 to compare the algorithms. Try to calculate phi(10090) as an example.
-
+*/
+  assert(time(phi(10090)) <= time(10090.totient))
+  assert(!(time(phi(10090)) > time(10090.totient)))
+  assert(time(phi(4)) <= time(4.totient))
+  assert(!(time(phi(4)) > time(4.totient)))
+  assert(time(phi(1111111)) <= time(1111111.totient))
+  assert(!(time(phi(1111111)) > time(1111111.totient)))
+  /*
 P39 (*) A list of prime numbers.
 Given a range of integers by its lower and upper limit, construct a list of all prime numbers in that range.
 scala> listPrimesinRange(7 to 31)
 res0: List[Int] = List(7, 11, 13, 17, 19, 23, 29, 31)
+*/
+  assert(listPrimesinRange(7 to 31) == List(7, 11, 13, 17, 19, 23, 29, 31))
+  assert(listPrimesinRange(2 to 11) == List(2, 3, 5, 7, 11))
+  assert(listPrimesinRange(1 to 11) == List(2, 3, 5, 7, 11))
+  assert(listPrimesinRange(3 to 11) == List(3, 5, 7, 11))
+  assert(listPrimesinRange(2 to 2) == List(2))
+  assert(listPrimesinRange(561 to 561) == List())
+  assert(listPrimesinRange(7 to 2) == List())
+  /*
 P40 (**) Goldbach's conjecture.
 Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers. E.g. 28 = 5 + 23. It is one of the most famous facts in number theory that has not been proved to be correct in the general case. It has been numerically confirmed up to very large numbers (much larger than Scala's Int can represent). Write a function to find the two prime numbers that sum up to a given even integer.
 scala> 28.goldbach
 res0: (Int, Int) = (5,23)
+*/
+  assert(28.goldbach == (5, 23))
+  assert(6.goldbach == (3, 3))
+  assert(34.goldbach == (3, 31))
+  assert(222.goldbach == (11, 211))
+  assert(110.goldbach == (3, 107))
+  //2.goldbach    java.lang.Exception: Only even numbers greater than 2 are permitted.
+  //23.goldbach     java.lang.Exception: Only even numbers greater than 2 are permitted.
+  /*
 P41 (**) A list of Goldbach compositions.
 Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.
 scala> printGoldbachList(9 to 20)

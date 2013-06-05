@@ -56,6 +56,24 @@ package arithmetic {
       }
       nestingFunction(primelist, (primelist.head, 1), List())
     }
+
+    //P40 (**) Goldbach's conjecture.
+    //Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers. E.g. 28 = 5 + 23. It is one of the most famous facts in number theory that has not been proved to be correct in the general case. It has been numerically confirmed up to very large numbers (much larger than Scala's Int can represent). Write a function to find the two prime numbers that sum up to a given even integer.
+    def goldbach: (Int, Int) = {
+      lazy val primelist = listPrimesinRange(2 to start)
+      def sumFirstList(a: Int, list: List[Int]): (Int, Int) = {
+        if (list.isEmpty) null
+        else if (a + list.head == start) (a, list.head)
+        else sumFirstList(a, list.tail)
+      }
+      def sumList(list: List[Int]): (Int, Int) = {
+        if (sumFirstList(list.head, list) != null) sumFirstList(list.head, list)
+        else sumList(list.tail)
+      }
+      if ((start % 2) == 1 || (start == 2)) throw new Exception("Only even numbers greater than 2 are permitted.")
+      else sumList(primelist)
+    }
+
   }
 
   object S99Int {
@@ -68,6 +86,36 @@ package arithmetic {
       else gcd(b, a % b)
     }
 
+    //P37 (**) Calculate Euler's totient function phi(m) (improved).
+    def phi(n: Int): Int = {
+      def phiHelper(list: List[(Int, Int)]): Int = {
+        if (list.isEmpty) 1
+        else {
+          val p = list.head._1
+          val m = list.head._2
+          ((p - 1) * Math.pow(p, m - 1).toInt) * phiHelper(list.tail)
+        }
+      }
+      if (n == 0) 0
+      else phiHelper(n.primeFactorMultiplicity)
+    }
+
+    //P38 (*) Compare the two methods of calculating Euler's totient function.
+    //Use the solutions of problems P34 and P37 to compare the algorithms. Try to calculate phi(10090) as an example.
+    //Note: This algorithm was obtained from wikipedia.
+    def time(f: => Unit) = {
+      val s = System.currentTimeMillis
+      f
+      System.currentTimeMillis - s
+    }
+
+    //P39 (*) A list of prime numbers.
+    //Given a range of integers by its lower and upper limit, construct a list of all prime numbers in that range.
+    def listPrimesinRange(r: Range): List[Int] = {
+      if (r.isEmpty) Nil
+      else if (r.head.isPrime) List(r.head) ++ listPrimesinRange(r.tail)
+      else listPrimesinRange(r.tail)
+    }
   }
 
 } 
