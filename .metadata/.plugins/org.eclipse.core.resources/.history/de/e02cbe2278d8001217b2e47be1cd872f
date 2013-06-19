@@ -140,21 +140,18 @@ scala> printGoldbachList(9 to 20)
 16 = 3 + 13
 18 = 5 + 13
 20 = 3 + 17
-
-  printGoldbachList(9 to 20)
-  10 = 3 + 7
-  12 = 5 + 7
-  14 = 3 + 11
-  16 = 3 + 13
-  18 = 5 + 13
-  20 = 3 + 17
-  
+*/
+  printGoldbachList(9 to 20)                      //> 10 = 3 + 7
+                                                  //| 12 = 5 + 7
+                                                  //| 14 = 3 + 11
+                                                  //| 16 = 3 + 13
+                                                  //| 18 = 5 + 13
+                                                  //| 20 = 3 + 17
+  /*
 
 In most cases, if an even number is written as the sum of two prime numbers, one of them is very small. Very rarely, the primes are both bigger than, say, 50. Try to find out how many such cases there are in the range 2..3000.
 
 Example (minimum value of 50 for the primes):
-
-//NOTE: I believe these results are incorrect, so I will not persue this problem any more.
 
 scala> printGoldbachListLimited(1 to 2000, 50)
 992 = 73 + 919
@@ -163,5 +160,72 @@ scala> printGoldbachListLimited(1 to 2000, 50)
 1928 = 61 + 1867
 The file containing the full class for this section is arithmetic.scala.
 */
+
+  (1.toInt, 2.toInt) == (Int, Int)                //> res0: Boolean = false
+  992.goldbachLim(50)                             //> res1: (Int, Int) = (73,919)
+  1.goldbachLim(50)                               //> res2: (Int, Int) = (1,1)
+  60.goldbachLim(50)                              //> res3: (Int, Int) = (1,1)
+  printGoldbachListLimited(990 to 994, 50)        //> 990 = 53 + 937
+                                                  //| 992 = 73 + 919
+                                                  //| 994 = 53 + 941
+  53.isPrime                                      //> res4: Boolean = true
+  937.isPrime                                     //> res5: Boolean = true
+  printGoldbachListLimited1(1 to 2000, 50)        //> 992 = 73 + 919
+                                                  //| 1382 = 61 + 1321
+                                                  //| 1856 = 67 + 1789
+                                                  //| 1928 = 61 + 1867
+  53 + 937                                        //> res6: Int(990) = 990
+  54.goldbachLim(50)                              //> res7: (Int, Int) = (1,1)
+  52.goldbachLim(50)                              //> res8: (Int, Int) = (1,1)
+  printGoldbachListLimited(1 to 2000, 50)         //> 106 = 53 + 53
+                                                  //| 112 = 53 + 59
+                                                  //| 114 = 53 + 61
+                                                  //| 118 = 59 + 59
+                                                  //| 120 = 53 + 67
+                                                  //| 122 = 61 + 61
+                                                  //| 124 = 53 + 71
+                                                  //| 126 = 53 + 73
+                                                  //| 128 = 61 + 67
+                                                  //| 130 = 59 + 71
+                                                  //| 132 = 53 + 79
+                                                  //| 134 = 61 + 73
+                                                  //| 136 = 53 + 83
+                                                  //| 138 = 59 + 79
+                                                  //| 140 = 61 + 79
+                                                  //| 142 = 53 + 89
+                                                  //| 144 = 61 + 83
+                                                  //| 146 = 67 + 79
+                                                  //| 148 = 59 + 89
+                                                  //| 150 = 53 + 97
+                                                  //| 152 = 73 + 79
+                                                  //| 154 = 53 + 101
+                                                  //| 156 = 53 + 103
+                                                  //| 158 = 61 + 97
+                                                  //| 160 = 53 + 107
+                                                  //| 162 = 53 + 109
+                                                  //| 164 = 61 + 103
+                                                  //| 166 = 53 + 113
+                                                  //| 168 = 59 + 109
+                                                  //| 170 = 61 + 109
+                                                  //| 172 = 59 + 113
+                                                  //| 174 = 61 + 113
+                                                  //| 176 = 67 + 109
+                                                  //| 178 = 71 + 107
+                                                  //| 180 = 53 + 127
+                                                  //| 182 = 73 + 109
+                                                  //| 184 = 53 + 131
+                                                  //| 186 = 59 + 127
+                                                  //| 188 = 61 + 127
+                                                  //| 190 = 53 + 137
+                                                  //| 192 = 53 + 139
+                                                  //| 194 = 67 + 127
+                                                  //| 196 = 59 + 137
+                                                  //| 198 = 59 + 139
+                                                  //| 200 = 61 + 139
+                                                  //| 202 = 53 + 149
+                                                  //| 204 = 53 + 151
+                                                  //| 206 = 67 + 139
+                                                  //| 208 = 59 
+                                                  //| Output exceeds cutoff limit./
 
 }
