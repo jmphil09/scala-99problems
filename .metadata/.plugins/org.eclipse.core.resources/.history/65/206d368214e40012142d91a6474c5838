@@ -1,0 +1,110 @@
+package arithmetic
+
+import arithmetic._
+import arithmetic.S99Int._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class S99TestSuite extends FunSuite{
+  
+  //isPrime tests
+  test("isPrime test 1") { assert(2.isPrime == true)}
+  test("isPrime test 2") {assert(10.isPrime == false)}
+  test("isPrime test 3") {assert(1.isPrime == false)}
+  test("isPrime test 4") {assert(0.isPrime == false)}
+  test("isPrime test 5") {assert(-7.isPrime == false)}
+  test("isPrime test 6") {assert(3.isPrime == true)}
+  test("isPrime test 7") {assert(1121392387.isPrime == false)}
+  test("isPrime test 8") {assert(4.isPrime == false)}
+  test("isPrime test 9") {assert(new S99Int(5).isPrime == true)}
+  
+  //gcd tests
+  test("gcd test 1") {assert(gcd(5, 10) == 5)}
+  test("gcd test 2") {assert(gcd(2, 46) == 2)}
+  test("gcd test 3") {assert(gcd(5, 3) == 1)}
+  test("gcd test 4") {assert(gcd(12, 12) == 12)}
+  test("gcd test 5") {assert(gcd(87, 88) == 1)}
+  test("gcd test 6") {assert(gcd(1, 3) == 1)}
+  
+  //isCoprimeTo tests
+  test("isCoprimeTo test 1") {assert(35.isCoprimeTo(64) == true)}
+  test("isCoprimeTo test 2") {assert(5.isCoprimeTo(10) == false)}
+  test("isCoprimeTo test 3") {assert(2.isCoprimeTo(46) == false)}
+  test("isCoprimeTo test 4") {assert(5.isCoprimeTo(3) == true)}
+  test("isCoprimeTo test 5") {assert(12.isCoprimeTo(12) == false)}
+  test("isCoprimeTo test 6") {assert(87.isCoprimeTo(88) == true)}
+  test("isCoprimeTo test 7") {assert(1.isCoprimeTo(3) == true)}
+  
+  //totient tests
+  test("totient test 1") {assert(10.totient == 4)}
+  test("totient test 2") {assert(190.totient == 72)}
+  //test("totient test undefined") {assert(-4.totient === 2)}// Note: This case may not be defined, but gives 2 as a result on wolframalpha.com
+  test("totient test 3") {assert(729.totient == 486)}
+  test("totient test 4") {assert(0.totient == 0)}
+  test("totient test 5") {assert(555.totient == 288)}
+  
+  //primeFactors tests
+  test("primeFactors test 1") {assert(315.primeFactors == List(3, 3, 5, 7))}
+  test("primeFactors test 2") {assert(33.primeFactors == List(3, 11))}
+  test("primeFactors test 3") {assert(2.primeFactors == List(2))}
+  test("primeFactors test 4") {assert(3.primeFactors == List(3))}
+  test("primeFactors test 5") {assert(4.primeFactors == List(2, 2))}
+  test("primeFactors test 6") {assert(729.primeFactors == List(3, 3, 3, 3, 3, 3))}
+  
+  //primeFactorMultiplicity tests
+  test("primeFactorMultiplicity test 1") {assert(315.primeFactorMultiplicity == List((3, 2), (5, 1), (7, 1)))}
+  test("primeFactorMultiplicity test 2") {assert(2.primeFactorMultiplicity == List((2, 1)))}
+  test("primeFactorMultiplicity test 3") {assert(4.primeFactorMultiplicity == List((2, 2)))}
+  test("primeFactorMultiplicity test 4") {assert(8.primeFactorMultiplicity == List((2, 3)))}
+  test("primeFactorMultiplicity test 5") {assert(6.primeFactorMultiplicity == List((2, 1), (3, 1)))}
+  test("primeFactorMultiplicity test 6") {assert(729.primeFactorMultiplicity == List((3, 6)))}
+  test("primeFactorMultiplicity test 7") {assert(561.primeFactorMultiplicity == List((3, 1), (11, 1), (17, 1)))}
+  
+  //phi tests
+  test("phi test 1") {assert(phi(10) == 4)}
+  test("phi test 2") {assert(phi(190) == 72)}
+  test("phi test undefined") {assert(phi(-4) == 2)} //Note: This case may not be defined, but gives 2 as a result on wolframalpha.com
+  test("phi test 3") {assert(phi(729) == 486)}
+  test("phi test 4") {assert(phi(0) == 0)}
+  test("phi test 5") {assert(phi(555) == 288)}
+  
+  //time tests to compare phi vs. totient
+  test("time test 1") {assert(time(phi(10090)) <= time(10090.totient))}
+  test("time test 2") {assert(!(time(phi(10090)) > time(10090.totient)))}
+  test("time test 3") {assert(time(phi(4)) <= time(4.totient))}
+  test("time test 4") {assert(!(time(phi(4)) > time(4.totient)))}
+  test("time test 5") {assert(time(phi(1111111)) <= time(1111111.totient))}
+  test("time test 6") {assert(!(time(phi(1111111)) > time(1111111.totient)))}
+  
+  //listPrimesinRange tests
+  test("listPrimesinRange test 1") {assert(listPrimesinRange(7 to 31) == List(7, 11, 13, 17, 19, 23, 29, 31))}
+  test("listPrimesinRange test 2") {assert(listPrimesinRange(2 to 11) == List(2, 3, 5, 7, 11))}
+  test("listPrimesinRange test 3") {assert(listPrimesinRange(1 to 11) == List(2, 3, 5, 7, 11))}
+  test("listPrimesinRange test 4") {assert(listPrimesinRange(3 to 11) == List(3, 5, 7, 11))}
+  test("listPrimesinRange test 5") {assert(listPrimesinRange(2 to 2) == List(2))}
+  test("listPrimesinRange test 6") {assert(listPrimesinRange(561 to 561) == List())}
+  test("listPrimesinRange test 7") {assert(listPrimesinRange(7 to 2) == List())}
+  
+  //goldbach tests
+  test("goldbach test 1") {assert(28.goldbach == (5, 23))}
+  test("goldbach test 2") {assert(6.goldbach == (3, 3))}
+  test("goldbach test 3") {assert(34.goldbach == (3, 31))}
+  test("goldbach test 4") {assert(222.goldbach == (11, 211))}
+  test("goldbach test 5") {assert(110.goldbach == (3, 107))}
+  //2.goldbach    java.lang.Exception: Only even numbers greater than 2 are permitted.
+  //23.goldbach     java.lang.Exception: Only even numbers greater than 2 are permitted.
+  
+  /*
+  printGoldbachList(9 to 20)
+  10 = 3 + 7
+  12 = 5 + 7
+  14 = 3 + 11
+  16 = 3 + 13
+  18 = 5 + 13
+  20 = 3 + 17
+  */
+}

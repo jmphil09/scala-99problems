@@ -1,0 +1,21 @@
+package arithmetic
+
+import arithmetic.S99Int._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class S99TestSuite extends FunSuite{
+  test("isPrime test 1") { assert(2.isPrime == true)}
+  test("isPrime test 2") {assert(10.isPrime == false)}
+  test("isPrime test 3") {assert(1.isPrime == false)}
+  test("isPrime test 4") {assert(0.isPrime == false)}
+  test("isPrime test 5") {assert(-7.isPrime == false)}
+  test("isPrime test 6") {assert(3.isPrime == true)}
+  test("isPrime test 7") {assert(1121392387.isPrime == false)}
+  test("isPrime test 8") {assert(4.isPrime == false)}
+  test("isPrime test 9") {assert(new S99Int(5).isPrime == true)}
+}

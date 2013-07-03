@@ -515,3 +515,19 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException
 	at scala.tools.nsc.interactive.Global.backgroundCompile(Global.scala:474)
 	at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:25)
 2013-07-01 19:17:41,176  WARN [Worker-7] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - WorksheetManager <actor>: caught java.util.NoSuchElementException: None.get
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - java.util.NoSuchElementException: None.get
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.None$.get(Option.scala:274)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.None$.get(Option.scala:272)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at org.scalaide.worksheet.ScriptCompilationUnit.scalaProject(ScriptCompilationUnit.scala:33)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at org.scalaide.worksheet.runtime.WorksheetsManager.org$scalaide$worksheet$runtime$WorksheetsManager$$forwardIfEvaluatorExists(WorksheetsManager.scala:53)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at org.scalaide.worksheet.runtime.WorksheetsManager$$anonfun$act$1$$anonfun$apply$1.apply(WorksheetsManager.scala:34)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at org.scalaide.worksheet.runtime.WorksheetsManager$$anonfun$act$1$$anonfun$apply$1.apply(WorksheetsManager.scala:29)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.actors.ReactorTask.run(ReactorTask.scala:31)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.actors.ReactorTask.compute(ReactorTask.scala:63)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.concurrent.forkjoin.RecursiveAction.exec(RecursiveAction.java:147)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.concurrent.forkjoin.ForkJoinTask.quietlyExec(ForkJoinTask.java:422)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.concurrent.forkjoin.ForkJoinWorkerThread.mainLoop(ForkJoinWorkerThread.java:340)
+2013-07-03 11:36:16,637 ERROR [ForkJoinPool-1-worker-0] - System.err - at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:325)
+2013-07-03 11:42:20,686  WARN [ModalContext] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.
+2013-07-03 11:59:32,900  WARN [org.eclipse.jdt.internal.ui.text.JavaReconciler] - ImplicitHighlightingPresenter - Timeout while waiting for `askLoadedTyped` during implicit highlighting.

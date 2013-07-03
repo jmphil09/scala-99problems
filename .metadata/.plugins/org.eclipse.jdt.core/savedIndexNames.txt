@@ -1,19 +1,22 @@
 INDEX VERSION 1.126+C:\Users\James\Documents\GitHub\scala-99problems\.metadata\.plugins\org.eclipse.jdt.core
-2660715743.index
+113684090.index
+30765161.index
 4108727661.index
 3164769823.index
 3974580528.index
 1995173708.index
+1045909629.index
 3133528496.index
 163172794.index
 305854171.index
 1498219845.index
 4041092966.index
 4155206848.index
-1697886153.index
 1299022128.index
+1697886153.index
 1115467115.index
+3490890020.index
 3443668773.index
-3065916431.index
-30765161.index
 2910509924.index
+3065916431.index
+3477716650.index

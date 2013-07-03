@@ -1,0 +1,13 @@
+package arithmetic
+
+import arithmetic._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class S99TestSuite extends FunSuite{
+  test("does this work?") {assert(1==1)}
+}
