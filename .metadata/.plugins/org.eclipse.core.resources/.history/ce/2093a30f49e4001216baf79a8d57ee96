@@ -1,0 +1,19 @@
+package lists
+
+import listsPackage._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class ListTestSuite extends FunSuite{
+
+  //last tests
+  test("last test 1") {assert(last(List(0)) == 0) }
+  test("last test 2") {assert(last(List(0, 1, 2, 3, 4, 5)) == 5)}
+  test("last test 3") {assert(last(List(1, 1, 1, 1, 1, 1, 1, 1)) == 1)}
+  test("last test 4") {assert(last(List('a', 'b', 'c')) == 'c')}
+  test("last test 5") {last(List())  java.util.NoSuchElementException: Error: Empty List
+}

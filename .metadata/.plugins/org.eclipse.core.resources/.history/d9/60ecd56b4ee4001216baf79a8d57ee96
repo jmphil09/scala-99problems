@@ -1,0 +1,119 @@
+package lists
+
+import listsPackage.lists._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class ListTestSuite extends FunSuite{
+
+  //last tests
+  test("last test 1") {assert(last(List(0)) == 0) }
+  test("last test 2") {assert(last(List(0, 1, 2, 3, 4, 5)) == 5)}
+  test("last test 3") {assert(last(List(1, 1, 1, 1, 1, 1, 1, 1)) == 1)}
+  test("last test 4") {assert(last(List('a', 'b', 'c')) == 'c')}
+  test("last test 5") {intercept[NoSuchElementException] {last(List())} }
+  
+  //penultimate tests
+  test("penultimate test 1") {assert(penultimate(List(1, 1, 2, 3, 5, 8)) == 5)}
+  test("penultimate test 2") {assert(penultimate(List(1, 2)) == 1)}
+  test("penultimate test 3") {assert(penultimate(List('a', 'b', 'f')) == 'b')}
+  test("penultimate test 4") {intercept[NoSuchElementException] {penultimate(List(1))} }
+  test("penultimate test 5") {intercept[NoSuchElementException] {penultimate(List())} }
+
+  //kth tests
+  test("kth test 1") {assert(kth(2, List(1, 1, 2, 3, 5, 8)) == 2)}
+  test("kth test 2") {assert(kth(0, List(1, 1, 2, 3, 5, 8)) == 1)}
+  test("kth test 3") {assert(kth(4, List('a', 'b', 'c', 'd', 'e')) == 'e')}
+  test("kth test 4") {assert(kth(0, List(1, 1)) == 1)}
+  test("kth test 5") {assert(kth(1, List(1, 1)) == 1)}
+  //kth(5,List(1))  java.util.NoSuchElementException: Error: Index out of bounds
+  //kth(0,List())  java.util.NoSuchElementException: Error: Empty List
+  
+  //length tests
+  test("length test 1") {assert(length(List(1, 1, 2, 3, 5, 8)) == 6)}
+  test("length test 2") {assert(length(List('a', 'a', 'l')) == 3)}
+  test("length test 3") {assert(length(List()) == 0)}
+  test("length test 4") {assert(length(List(1)) == 1)}
+  
+  //reverse tests
+  test("reverse test 1") {assert(reverse(List(1, 1, 2, 3, 5, 8)) == List(8, 5, 3, 2, 1, 1))}
+  test("reverse test 2") {assert(reverse(List(1, 1)) == List(1, 1))}
+  test("reverse test 3") {assert(reverse(List('a')) == List('a'))}
+  test("reverse test 4") {assert(reverse(List('a', 'a', 'g')) == List('g', 'a', 'a'))}
+  //reverse(List())  java.util.NoSuchElementException: Error: Empty List
+  
+  //isPalindrome tests
+  test("isPalindrome test 1") {assert(isPalindrome(List(1, 2, 3, 2, 1)) == true)}
+  test("isPalindrome test 2") {assert(isPalindrome(List(1, 1)) == true)}
+  test("isPalindrome test 3") {assert(isPalindrome(List('a', 'b')) == false)}
+  test("isPalindrome test 4") {assert(isPalindrome(List(1, 2, 3, 2)) == false)}
+  test("isPalindrome test 5") {assert(isPalindrome(List('a')) == true)}
+  //isPalindrome(List())  java.util.NoSuchElementException: Error: Empty List
+  
+  //flatten tests
+  test("flatten test 1") {assert(flatten(List(List(1, 1), 2, List(3, List(5, 8)))) == List(1, 1, 2, 3, 5, 8))}
+  test("flatten test 2") {assert(flatten(List(List(1), 1, List(1, List(1, 1)))) == List(1, 1, 1, 1, 1))}
+  test("flatten test 3") {assert(flatten(List()) == List())}
+  test("flatten test 4") {assert(flatten(List(List(), List(), List(List()))) == List())}
+  test("flatten test 5") {assert(flatten(List(List(1), List(), List(1, List(List(), 1)))) == List(1, 1, 1))}
+  test("flatten test 6") {assert(flatten(List(List(3))) == List(3))}
+  test("flatten test 7") {assert(flatten(List(List('a', 'b'), 'c', List('d', List('e', 'f')))) == List('a', 'b', 'c', 'd', 'e', 'f'))}
+  test("flatten test 8") {assert(flatten(List(List('a', 'b'), 7, List('d', List(1, 'f')))) == List('a', 'b', 7, 'd', 1, 'f'))}
+  
+  //compress tests
+  test("compress test 1") {assert(compress(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')) == List('a', 'b', 'c', 'a', 'd', 'e'))}
+  test("compress test 2") {assert(compress(List(1, 1, 2, 2, 3, 4, 4, 4, 4, 5, 5, 6, 7, 8, 8)) == List(1, 2, 3, 4, 5, 6, 7, 8))}
+  test("compress test 3") {assert(compress(List()) == List())}
+  test("compress test 4") {assert(compress(List(1)) == List(1))}
+  test("compress test 5") {assert(compress(List(1, 1)) == List(1))}
+  test("compress test 6") {assert(compress(List(1, 2)) == List(1, 2))}
+  
+  //pack tests
+  test("pack test 1") {assert(pack(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')) == List(List('a', 'a', 'a', 'a'), List('b'), List('c', 'c'), List('a', 'a'), List('d'), List('e', 'e', 'e', 'e')))}
+  test("pack test 2") {assert(pack(List()) == List(List()))}
+  test("pack test 3") {assert(pack(List(1)) == List(List(1)))}
+  test("pack test 4") {assert(pack(List(1, 2, 2, 3, 3, 3, 4, 4, 4, 4)) == List(List(1), List(2, 2), List(3, 3, 3), List(4, 4, 4, 4)))}
+  test("pack test 5") {assert(pack(List(1, 2)) == List(List(1), List(2)))}
+  
+  //encode tests
+  test("encode test 1") {assert(encode(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')) == List((4, 'a'), (1, 'b'), (2, 'c'), (2, 'a'), (1, 'd'), (4, 'e')))}
+  test("encode test 2") {assert(encode(List()) == List())}
+  test("encode test 3") {assert(encode(List(1)) == List((1, 1)))}
+  test("encode test 4") {assert(encode(List(1, 2, 2, 3, 3, 3, 4, 4, 4, 4)) == List((1, 1), (2, 2), (3, 3), (4, 4)))}
+  test("encode test 5") {assert(encode(List(1, 2)) == List((1, 1), (1, 2)))}
+  
+  //encodeModified tests
+  test("encodeModified test 1") {assert(encodeModified(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')) == List((4, 'a'), 'b', (2, 'c'), (2, 'a'), 'd', (4, 'e')))}
+  test("encodeModified test 2") {assert(encodeModified(List()) == List())}
+  test("encodeModified test 3") {assert(encodeModified(List(1)) == List(1))}
+  test("encodeModified test 4") {assert(encodeModified(List(1, 2, 2, 3, 3, 3, 4, 4, 4, 4)) == List(1, (2, 2), (3, 3), (4, 4)))}
+  test("encodeModified test 5") {assert(encodeModified(List(1, 2)) == List(1, 2))}
+  
+  //decode tests
+  test("decode test 1") {assert(decode(List((4, 'a'), (1, 'b'), (2, 'c'), (2, 'a'), (1, 'd'), (4, 'e'))) == List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e'))}
+  test("decode test 2") {assert(decode(List()) == List())}
+  test("decode test 3") {assert(decode(List((1, 1))) == List(1))}
+  test("decode test 4") {assert(decode(List((1, 1), (2, 2), (3, 3), (4, 4))) == List(1, 2, 2, 3, 3, 3, 4, 4, 4, 4))}
+  test("decode test 5") {assert(decode(List((1, 1), (1, 2))) == List(1, 2))}
+  
+  //encodeDirect tests
+  test("encodeDirect test 1") {assert(encodeDirect(List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')) == List((4, 'a'), (1, 'b'), (2, 'c'), (2, 'a'), (1, 'd'), (4, 'e')))}
+  test("encodeDirect test 2") {assert(encodeDirect(List()) == List())}
+  test("encodeDirect test 3") {assert(encodeDirect(List(1)) == List((1, 1)))}
+  test("encodeDirect test 4") {assert(encodeDirect(List(1, 2, 2, 3, 3, 3, 4, 4, 4, 4)) == List((1, 1), (2, 2), (3, 3), (4, 4)))}
+  test("encodeDirect test 5") {assert(encodeDirect(List(1, 2)) == List((1, 1), (1, 2)))}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+}

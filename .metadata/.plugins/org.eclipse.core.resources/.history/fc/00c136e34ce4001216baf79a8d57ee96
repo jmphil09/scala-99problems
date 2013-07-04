@@ -1,0 +1,48 @@
+package lists
+
+import listsPackage.lists._
+
+import org.scalatest.FunSuite
+
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
+
+@RunWith(classOf[JUnitRunner])
+class ListTestSuite extends FunSuite{
+
+  //last tests
+  test("last test 1") {assert(last(List(0)) == 0) }
+  test("last test 2") {assert(last(List(0, 1, 2, 3, 4, 5)) == 5)}
+  test("last test 3") {assert(last(List(1, 1, 1, 1, 1, 1, 1, 1)) == 1)}
+  test("last test 4") {assert(last(List('a', 'b', 'c')) == 'c')}
+  test("last test 5") {intercept[NoSuchElementException] {last(List())} }
+  
+  //penultimate tests
+  test("penultimate test 1") {assert(penultimate(List(1, 1, 2, 3, 5, 8)) == 5)}
+  test("penultimate test 2") {assert(penultimate(List(1, 2)) == 1)}
+  test("penultimate test 3") {assert(penultimate(List('a', 'b', 'f')) == 'b')}
+  test("penultimate test 4") {intercept[NoSuchElementException] {penultimate(List(1))} }
+  test("penultimate test 5") {intercept[NoSuchElementException] {penultimate(List())} }
+
+  //kth tests
+  test("kth test 1") {assert(kth(2, List(1, 1, 2, 3, 5, 8)) == 2)}
+  test("kth test 2") {assert(kth(0, List(1, 1, 2, 3, 5, 8)) == 1)}
+  test("kth test 3") {assert(kth(4, List('a', 'b', 'c', 'd', 'e')) == 'e')}
+  test("kth test 4") {assert(kth(0, List(1, 1)) == 1)}
+  test("kth test 5") {assert(kth(1, List(1, 1)) == 1)}
+  //kth(5,List(1))  java.util.NoSuchElementException: Error: Index out of bounds
+  //kth(0,List())  java.util.NoSuchElementException: Error: Empty List
+  
+  //length tests
+  test("length test 1") {assert(length(List(1, 1, 2, 3, 5, 8)) == 6)}
+  test("length test 2") {assert(length(List('a', 'a', 'l')) == 3)}
+  test("length test 3") {assert(length(List()) == 0)}
+  test("length test 4") {assert(length(List(1)) == 1)}
+  
+  //reverse tests
+  test("reverse test 1") {assert(reverse(List(1, 1, 2, 3, 5, 8)) == List(8, 5, 3, 2, 1, 1))}
+  test("reverse test 2") {assert(reverse(List(1, 1)) == List(1, 1))}
+  test("reverse test 3") {assert(reverse(List('a')) == List('a'))}
+  test("reverse test 4") {assert(reverse(List('a', 'a', 'g')) == List('g', 'a', 'a'))}
+  //reverse(List())  java.util.NoSuchElementException: Error: Empty List
+}
