@@ -1,0 +1,13 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val randomSymbolSet = randomPermute(List('a, 'b, 'c, 'd, 'e, 'f)).toSet
+                                                  //> randomSymbolSet  : scala.collection.immutable.Set[Symbol] = Set('e, 'a, 'f, 
+                                                  //| 'c, 'b, 'd)
+  
+  val aaa = List('a, 'b, 'c, 'd, 'e, 'f).toSet.subsets
+                                                  //> aaa  : Iterator[scala.collection.immutable.Set[Symbol]] = non-empty iterator
+                                                  //| 
+  aaa.contains(randomSymbolSet)                   //> res0: Boolean = true
+  
+}

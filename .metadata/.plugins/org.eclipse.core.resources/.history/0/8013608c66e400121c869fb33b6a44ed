@@ -1,0 +1,5 @@
+import listsPackage.lists._
+
+object testanddelete {
+  lazy val intSetsTo49 = (1 to 49).toSet.subsets  //> intSetsTo49  : Iterator[scala.collection.immutable.Set[Int]] = <lazy>
+}

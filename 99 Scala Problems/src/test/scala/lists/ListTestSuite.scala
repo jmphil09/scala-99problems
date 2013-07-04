@@ -181,28 +181,39 @@ class ListTestSuite extends FunSuite {
   test("range test 6") { assert(range(2, -2) == List(2, 1, 0, -1, -2)) }
 
   //randomSelect tests
-  //randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))  List[Symbol] = List('b, 'a, 'g)
-  //randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))  List[Symbol] = List('a, 'b, 'g)
-  //randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))  List[Symbol] = List('h, 'f, 'a)
-  //randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))  List[Symbol] = List('c, 'h, 'b)
-  //randomSelect(6, List(1,2,3,5,6,4,7,8,9))  List[Int] = List(3, 2, 1, 6, 4, 7)
-  //randomSelect(12, List(1,2,3,5,6,4,7,8,9))  java.util.NoSuchElementException: Error: Index out of bounds
+  lazy val complete3Set = List('a, 'b, 'c, 'd, 'f, 'g, 'h).toSet.subsets
+  val random3 = randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)).toSet
+  lazy val complete6Set = List(1, 2, 3, 5, 6, 4, 7, 8, 9).toSet.subsets
+  val random6 = randomSelect(6, List(1, 2, 3, 5, 6, 4, 7, 8, 9)).toSet
+
+  test("randomSelect test 1") { assert(complete3Set.contains(random3)) }
+  test("randomSelect test 2") { assert(complete6Set.contains(random6)) }
+  test("randomSelect test 3") { intercept[NoSuchElementException] { randomSelect(12, List(1, 2, 3, 5, 6, 4, 7, 8, 9)) } }
 
   //lotto tests
-  //lotto(6, 49)  List[Int] = List(12, 5, 29, 20, 15, 9)
-  //lotto(6, 49)  List[Int] = List(6, 32, 29, 31, 21, 49)
-  //lotto(1, 3)  List[Int] = List(1)
-  //lotto(2, 3)  List(2, 3)
-  //lotto(3, 3)  List(3, 2, 1)
-  //lotto(4, 3)  java.util.NoSuchElementException: Error: Index out of bounds
+  lazy val intSetsTo12 = (1 to 12).toSet.subsets
+  val lotto6 = lotto(6, 12).toSet
+  val lotto7 = lotto(7, 12).toSet
+  lazy val intSetsTo3 = (1 to 3).toSet.subsets
+  val lotto1 = lotto(1, 3).toSet
+  val lotto2 = lotto(2, 3).toSet
+  val lotto3 = lotto(3, 3).toSet
+
+  test("lotto test 1") { assert(intSetsTo12.contains(lotto6)) }
+  test("lotto test 2") { assert(intSetsTo12.contains(lotto7)) }
+  test("lotto test 3") { assert(intSetsTo3.contains(lotto1)) }
+  test("lotto test 4") { assert(intSetsTo3.contains(lotto2)) }
+  test("lotto test 5") { assert(intSetsTo3.contains(lotto3)) }
+  test("lotto test 6") { intercept[NoSuchElementException] { lotto(4, 3) } }
 
   //randomPermute tests
-  //randomPermute(List('a, 'b, 'c, 'd, 'e, 'f))  List[Symbol] = List('b, 'd, 'e, 'c, 'a, 'f)
-  //randomPermute(List('a, 'b, 'c, 'd, 'e, 'f))  List[Symbol] = List('b, 'a, 'c, 'f, 'd, 'e)
-  //randomPermute(List('a, 'b, 'c, 'd, 'e, 'f))  List[Symbol] = List('b, 'c, 'd, 'a, 'f, 'e)
-  //randomPermute(List())  List[Nothing] = List()
-  //randomPermute(List(-8))  List[Int] = List(-8)
-  //randomPermute(List(1,2,3,4,5,6,7))  List[Int] = List(3, 7, 4, 5, 2, 1, 6)
+  val randomSymbolSet = randomPermute(List('a, 'b, 'c, 'd, 'e, 'f)).toSet
+  val randomIntSet = randomPermute(List(1, 2, 3, 4, 5, 6, 7)).toSet
+
+  test("randomPermute test 1") { assert(List('a, 'b, 'c, 'd, 'e, 'f).toSet.subsets.contains(randomSymbolSet)) }
+  test("randomPermute test 2") { assert(List(1, 2, 3, 4, 5, 6, 7).toSet.subsets.contains(randomIntSet)) }
+  test("randomPermute test 3") { assert(randomPermute(List()) == List()) }
+  test("randomPermute test 4") { assert(randomPermute(List(-8)) == List(-8)) }
 
   //combinations tests
   test("combinations test 1") { assert(combinations(3, List('a, 'b, 'c, 'd, 'e, 'f)) == List(List('a, 'b, 'c), List('a, 'b, 'd), List('a, 'b, 'e), List('a, 'b, 'f), List('b, 'c, 'd), List('b, 'c, 'e), List('b, 'c, 'f), List('c, 'd, 'e), List('c, 'd, 'f), List('d, 'e, 'f))) }

@@ -1,0 +1,6 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val allints = (1 to 9).toList                   //> allints  : scala.collection.immutable.Range.Inclusive = Range(1, 2, 3, 4, 5, 
+                                                  //| 6, 7, 8, 9)
+}

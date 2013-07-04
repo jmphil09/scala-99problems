@@ -1,0 +1,9 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val intSetsTo12 = (1 to 12).toSet.subsets       //> intSetsTo12  : Iterator[scala.collection.immutable.Set[Int]] = non-empty iter
+                                                  //| ator
+  val lotto6 = lotto(6, 12)                       //> lotto6  : List[Int] = List(8, 9, 11, 5, 7, 6)
+  
+  intSetsTo12.contains(lotto6)                    //> res0: Boolean = false
+}

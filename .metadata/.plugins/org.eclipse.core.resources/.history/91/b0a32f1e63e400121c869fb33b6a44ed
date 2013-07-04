@@ -1,0 +1,26 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val complete3Set = combinations(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+                                                  //> complete3Set  : List[List[Symbol]] = List(List('a, 'b, 'c), List('a, 'b, 'd)
+                                                  //| , List('a, 'b, 'f), List('a, 'b, 'g), List('a, 'b, 'h), List('b, 'c, 'd), Li
+                                                  //| st('b, 'c, 'f), List('b, 'c, 'g), List('b, 'c, 'h), List('c, 'd, 'f), List('
+                                                  //| c, 'd, 'g), List('c, 'd, 'h), List('d, 'f, 'g), List('d, 'f, 'h), List('f, '
+                                                  //| g, 'h))
+  val random3 = randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h))
+                                                  //> random3  : List[Symbol] = List('c, 'a, 'f)
+  val complete6Set = combinations(6, List(1,2,3,5,6,4,7,8,9))
+                                                  //> complete6Set  : List[List[Int]] = List(List(1, 2, 3, 5, 6, 4), List(1, 2, 3,
+                                                  //|  5, 6, 7), List(1, 2, 3, 5, 6, 8), List(1, 2, 3, 5, 6, 9), List(2, 3, 5, 6, 
+                                                  //| 4, 7), List(2, 3, 5, 6, 4, 8), List(2, 3, 5, 6, 4, 9), List(3, 5, 6, 4, 7, 8
+                                                  //| ), List(3, 5, 6, 4, 7, 9), List(5, 6, 4, 7, 8, 9))
+  val random6 = randomSelect(6, List(1,2,3,5,6,4,7,8,9))
+                                                  //> random6  : List[Int] = List(9, 1, 7, 2, 8, 3)
+   complete3Set.toSet                             //> res0: scala.collection.immutable.Set[List[Symbol]] = Set(List('c, 'd, 'h), L
+                                                  //| ist('b, 'c, 'd), List('a, 'b, 'g), List('a, 'b, 'd), List('d, 'f, 'g), List(
+                                                  //| 'a, 'b, 'f), List('a, 'b, 'c), List('c, 'd, 'g), List('d, 'f, 'h), List('b, 
+                                                  //| 'c, 'g), List('a, 'b, 'h), List('b, 'c, 'f), List('f, 'g, 'h), List('b, 'c, 
+                                                  //| 'h), List('c, 'd, 'f))
+   random3.toSet                                  //> res1: scala.collection.immutable.Set[Symbol] = Set('c, 'a, 'f)
+   complete3Set.toSet.contains(random3.toSet)     //> res2: Boolean = false
+}

@@ -1,0 +1,9 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val randomSymbolSet = randomPermute(List('a, 'b, 'c, 'd, 'e, 'f)).toSet
+  
+  val aaa = List('a, 'b, 'c, 'd, 'e, 'f).toSet
+  aaa.contains(randomSymbolSet)
+  
+}

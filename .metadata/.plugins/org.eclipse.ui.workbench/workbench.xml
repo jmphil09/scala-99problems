@@ -18,7 +18,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -27,21 +27,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor id="scala.tools.eclipse.ScalaSourceFileEditor" name="lists.scala" partName="lists.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/main/scala/listsPackage/lists.scala" title="lists.scala" tooltip="99 Scala Problems/src/main/scala/listsPackage/lists.scala" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/main/scala/listsPackage/lists.scala"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="215" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="ListTestSuite.scala" partName="ListTestSuite.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/test/scala/lists/ListTestSuite.scala" title="ListTestSuite.scala" tooltip="99 Scala Problems/src/test/scala/lists/ListTestSuite.scala" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/test/scala/lists/ListTestSuite.scala"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1486" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
@@ -50,7 +39,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="93" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="130" org.eclipse.ui.ide.severityAndDescriptionField="468"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -185,177 +174,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/main/scala/arithmetic/S99Int.scala"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/lists/package.scala"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/99 Scala Problems/src/worksheet_lists.sc"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/main/scala/listsPackage/lists.scala"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/test/scala/lists/ListTestSuite.scala"/>
-</editors>
-<item historyLabel="S99TestSuite.scala" index="4">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="44" y="0"/>
-</item>
-<item historyLabel="S99TestSuite.scala" index="4">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="44" y="0"/>
-</item>
-<item historyLabel="S99Int.scala" index="0">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="44" y="0"/>
-</item>
-<item historyLabel="lists.scala" index="3">
-<position info="not_deleted" x="215" y="0"/>
-</item>
-<item historyLabel="package.scala" index="1">
-<position info="not_deleted" x="334" y="0"/>
-</item>
-<item historyLabel="lists.scala" index="3">
-<position info="not_deleted" x="215" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="298" y="0"/>
-</item>
-<item historyLabel="lists.scala" index="3">
-<position info="not_deleted" x="215" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="14791" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position info="not_deleted" x="977" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="44" y="0"/>
-</item>
-<item historyLabel="S99TestSuite.scala" index="4">
-<position info="not_deleted" x="4946" y="21"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="lists.scala" index="3">
-<position info="not_deleted" x="215" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position info="not_deleted" x="1105" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="853" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="1029" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="2106" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position info="not_deleted" x="465" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position info="not_deleted" x="43" y="0"/>
-</item>
-<item historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="14790" y="0"/>
-</item>
-<item historyLabel="worksheet_lists.sc" index="2">
-<position info="not_deleted" x="43" y="0"/>
-</item>
-<item active="true" historyLabel="ListTestSuite.scala" index="5">
-<position info="not_deleted" x="14790" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="explorer"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="right"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -363,11 +187,13 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="problems"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="testanddelete.sc" tooltip="99 Scala Problems/testanddelete.sc">
+<persistable path="/99 Scala Problems/testanddelete.sc"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99TestSuite.scala" tooltip="99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala">
 <persistable path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
 </file>

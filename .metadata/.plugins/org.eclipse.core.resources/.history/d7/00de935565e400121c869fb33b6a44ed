@@ -1,0 +1,6 @@
+import listsPackage.lists._
+
+object testanddelete {
+  val allints = 1 to 9
+                                                  //> res5: Boolean = true
+}
