@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="23" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="182" y="182">
 <fastViewData fastViewLocation="1024"/>
@@ -18,7 +18,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -27,10 +27,26 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99TestSuite.scala" partName="S99TestSuite.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala" title="S99TestSuite.scala" tooltip="99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5035" selectionTopPixel="1274"/>
+</editor>
+<editor id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99Int.scala" partName="S99Int.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/main/scala/arithmetic/S99Int.scala" title="S99Int.scala" tooltip="99 Scala Problems/src/main/scala/arithmetic/S99Int.scala" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/main/scala/arithmetic/S99Int.scala"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4412" selectionTopPixel="1581"/>
+</editor>
+<editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="lists.scala" partName="lists.scala" path="C:/Users/James/Documents/GitHub/scala-99problems/99 Scala Problems/src/main/scala/listsPackage/lists.scala" title="lists.scala" tooltip="99 Scala Problems/src/main/scala/listsPackage/lists.scala" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/99 Scala Problems/src/main/scala/listsPackage/lists.scala"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1909" selectionTopPixel="935"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.junit.ResultView" partName="JUnit">
@@ -39,9 +55,10 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
-<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="93" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="130" org.eclipse.ui.ide.severityAndDescriptionField="468"/>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="93" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="130" org.eclipse.ui.ide.severityAndDescriptionField="720"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -87,7 +104,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.scala-ide.sdt.core.perspective">
+<perspectives activePart="scala.tools.eclipse.ScalaSourceFileEditor" activePerspective="org.scala-ide.sdt.core.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="scala.tools.eclipse.PerspectiveFactory" id="org.scala-ide.sdt.core.perspective" label="Scala"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -148,7 +165,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="explorer"/>
 <info folder="true" part="problems" ratio="0.74922603" ratioLeft="484" ratioRight="162" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.jdt.junit.ResultView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -174,7 +191,22 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/main/scala/arithmetic/S99Int.scala"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/99 Scala Problems/src/main/scala/listsPackage/lists.scala"/>
+</editors>
+<item historyLabel="S99TestSuite.scala" index="0">
+<position info="not_deleted" x="5035" y="0"/>
+</item>
+<item historyLabel="S99Int.scala" index="1">
+<position info="not_deleted" x="4412" y="0"/>
+</item>
+<item active="true" historyLabel="lists.scala" index="2">
+<position info="not_deleted" x="1969" y="4"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -191,20 +223,20 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="testanddelete.sc" tooltip="99 Scala Problems/testanddelete.sc">
-<persistable path="/99 Scala Problems/testanddelete.sc"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99TestSuite.scala" tooltip="99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala">
-<persistable path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="ListTestSuite.scala" tooltip="99 Scala Problems/src/test/scala/lists/ListTestSuite.scala">
-<persistable path="/99 Scala Problems/src/test/scala/lists/ListTestSuite.scala"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="lists.scala" tooltip="99 Scala Problems/src/main/scala/listsPackage/lists.scala">
 <persistable path="/99 Scala Problems/src/main/scala/listsPackage/lists.scala"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99Int.scala" tooltip="99 Scala Problems/src/main/scala/arithmetic/S99Int.scala">
 <persistable path="/99 Scala Problems/src/main/scala/arithmetic/S99Int.scala"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="S99TestSuite.scala" tooltip="99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala">
+<persistable path="/99 Scala Problems/src/test/scala/arithmetic/S99TestSuite.scala"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="testanddelete.sc" tooltip="99 Scala Problems/testanddelete.sc">
+<persistable path="/99 Scala Problems/testanddelete.sc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" name="ListTestSuite.scala" tooltip="99 Scala Problems/src/test/scala/lists/ListTestSuite.scala">
+<persistable path="/99 Scala Problems/src/test/scala/lists/ListTestSuite.scala"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="worksheet_lists.sc" tooltip="99 Scala Problems/src/worksheet_lists.sc">
 <persistable path="/99 Scala Problems/src/worksheet_lists.sc"/>
