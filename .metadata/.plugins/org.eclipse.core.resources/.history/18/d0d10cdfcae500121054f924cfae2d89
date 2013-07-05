@@ -59,6 +59,10 @@ def main(args: Array[String]) = {
 
   //P07 (**) Flatten a nested list structure.
   def flatten[Any](list: List[Any]): List[scala.Any] = list match {
+    /*case Nil => Nil
+    case head :: tail => List(head) ++ flatten(tail)
+    case lis: List[_] => flatten(lis) 
+    */
     case Nil => Nil
     case head :: tail => {
       head match {

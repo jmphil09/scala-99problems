@@ -58,14 +58,18 @@ def main(args: Array[String]) = {
   def isPalindrome[A](list: List[A]): Boolean = (reverse(list) == list)
 
   //P07 (**) Flatten a nested list structure.
-  def flatten[Any](list: List[Any]): List[scala.Any] = list match {
+  def flatten[A](list: List[A]): List[A] = list match {
     case Nil => Nil
+    case (ls: List) :: tail => flatten(ls) ++ flatten(tail)
+    case head :: tail => List(head) ++ flatten(tail)
+    
+    /*case Nil => Nil
     case head :: tail => {
       head match {
-        case l: List[_] => flatten(l)
+        case l: List[A] => flatten(l)
         case i => List(i)
       }
-    } ++ flatten(tail)
+    } ++ flatten(tail)*/
   }
 
   //P08 (**) Eliminate consecutive duplicates of list elements.
